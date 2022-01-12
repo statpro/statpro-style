@@ -45,9 +45,9 @@ For codeclimate to run please add the following to `.codeclimate.yml` to overrid
 ```yaml
 prepare:
   fetch:
-    - url: "https://raw.githubusercontent.com/FritzViljoen/statpro-style/main/default_rubocop.yml"
+    - url: "https://raw.githubusercontent.com/Statpro/statpro-style/master/default_rubocop.yml"
       path: ".codeclimate-rubocop.yml"
-    - url: "https://raw.githubusercontent.com/FritzViljoen/statpro-style/main/default_haml-lint.yml"
+    - url: "https://raw.githubusercontent.com/Statpro/statpro-style/master/default_haml-lint.yml"
       path: ".codeclimate-haml-lint.yml"
 ```
 
