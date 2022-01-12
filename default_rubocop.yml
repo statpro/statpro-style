@@ -1,0 +1,696 @@
+# COPES: https://docs.rubocop.org/en/stable/cops/
+
+# default_inherit_from_conf:
+#  https://github.com/rubocop-hq/rubocop/blob/master/config/default.yml
+
+#################### Layout ###########################
+
+Layout/ArgumentAlignment:
+  Description: >-
+    Align the arguments of a method call if they span more
+    than one line.
+  StyleGuide: '#no-double-indent'
+  Enabled: true
+  VersionAdded: '0.68'
+  VersionChanged: '0.77'
+  # Alignment of arguments in multi-line method calls.
+  #
+  # The `with_first_argument` style aligns the following lines along the same
+  # column as the first parameter.
+  #
+  #     method_call(a,
+  #                 b)
+  #
+  # The `with_fixed_indentation` style aligns the following lines with one
+  # level of indentation relative to the start of the line with the method call.
+  #
+  #     method_call(a,
+  #       b)
+  EnforcedStyle: with_first_argument
+  SupportedStyles:
+    - with_first_argument
+    - with_fixed_indentation
+  # By default the indentation width from `Layout/IndentationWidth` is used,
+  # but it can be overridden by setting this parameter.
+  IndentationWidth: ~
+
+Layout/EmptyLinesAroundBlockBody:
+  Description: "Keeps track of empty lines around block bodies."
+  StyleGuide: '#empty-lines-around-bodies'
+  Enabled: true
+  VersionAdded: '0.49'
+  EnforcedStyle: no_empty_lines
+  SupportedStyles:
+    - empty_lines
+    - no_empty_lines
+
+Layout/EmptyLinesAroundClassBody:
+  Description: "Keeps track of empty lines around class bodies."
+  StyleGuide: '#empty-lines-around-bodies'
+  Enabled: true
+  VersionAdded: '0.49'
+  VersionChanged: '0.53'
+  EnforcedStyle: no_empty_lines
+  SupportedStyles:
+    - empty_lines
+    - empty_lines_except_namespace
+    - empty_lines_special
+    - no_empty_lines
+    - beginning_only
+    - ending_only
+
+Layout/EmptyLinesAroundExceptionHandlingKeywords:
+  Description: "Keeps track of empty lines around exception handling keywords."
+  StyleGuide: '#empty-lines-around-bodies'
+  Enabled: false
+  VersionAdded: '0.49'
+
+Layout/EmptyLinesAroundMethodBody:
+  Description: "Keeps track of empty lines around method bodies."
+  StyleGuide: '#empty-lines-around-bodies'
+  Enabled: false
+  VersionAdded: '0.49'
+
+Layout/EmptyLinesAroundModuleBody:
+  Description: "Keeps track of empty lines around module bodies."
+  StyleGuide: '#empty-lines-around-bodies'
+  Enabled: true
+  VersionAdded: '0.49'
+  EnforcedStyle: no_empty_lines
+  SupportedStyles:
+    - empty_lines
+    - empty_lines_except_namespace
+    - empty_lines_special
+    - no_empty_lines
+
+Layout/FirstArrayElementLineBreak:
+  Description: >-
+    Checks for a line break before the first element in a
+    multi-line array.
+  Enabled: true
+  VersionAdded: '0.49'
+
+Layout/FirstArrayElementIndentation:
+  Description: >-
+    Checks the indentation of the first element in an array
+    literal.
+  Enabled: true
+  VersionAdded: '0.68'
+  VersionChanged: '0.77'
+  # The value `special_inside_parentheses` means that array literals with
+  # brackets that have their opening bracket on the same line as a surrounding
+  # opening round parenthesis, shall have their first element indented relative
+  # to the first position inside the parenthesis.
+  #
+  # The value `consistent` means that the indentation of the first element shall
+  # always be relative to the first position of the line where the opening
+  # bracket is.
+  #
+  # The value `align_brackets` means that the indentation of the first element
+  # shall always be relative to the position of the opening bracket.
+  EnforcedStyle: consistent
+  SupportedStyles:
+    - special_inside_parentheses
+    - consistent
+    - align_brackets
+  # By default the indentation width from `Layout/IndentationWidth` is used,
+  # but it can be overridden by setting this parameter.
+  IndentationWidth: ~
+
+Layout/LineLength:
+  Description: 'Limit lines to 80 characters.'
+  StyleGuide: '#80-character-limits'
+  Enabled: false
+  VersionAdded: '0.25'
+  VersionChanged: '0.68'
+  AutoCorrect: false
+  Max: 80
+  # To make it possible to copy or click on URIs in the code, we allow lines
+  # containing a URI to be longer than Max.
+  AllowHeredoc: true
+  AllowURI: true
+  URISchemes:
+    - http
+    - https
+  # The IgnoreCopDirectives option causes the LineLength rule to ignore cop
+  # directives like '# rubocop: enable ...' when calculating a line's length.
+  IgnoreCopDirectives: true
+  # The IgnoredPatterns option is a list of !ruby/regexp and/or string
+  # elements. Strings will be converted to Regexp objects. A line that matches
+  # any regular expression listed in this option will be ignored by LineLength.
+  IgnoredPatterns: []
+
+Layout/MultilineArrayBraceLayout:
+  Description: >-
+    Checks that the closing brace in an array literal is
+    either on the same line as the last array element, or
+    a new line.
+  Enabled: true
+  VersionAdded: '0.49'
+  EnforcedStyle: new_line
+  SupportedStyles:
+    # symmetrical: closing brace is positioned in same way as opening brace
+    # new_line: closing brace is always on a new line
+    # same_line: closing brace is always on the same line as last element
+    - symmetrical
+    - new_line
+    - same_line
+
+Layout/MultilineMethodCallIndentation:
+  Description: >-
+    Checks indentation of method calls with the dot operator
+    that span more than one line.
+  Enabled: true
+  VersionAdded: '0.49'
+  EnforcedStyle: indented_relative_to_receiver
+  SupportedStyles:
+    - aligned
+    - indented
+    - indented_relative_to_receiver
+  # By default, the indentation width from Layout/IndentationWidth is used
+  # But it can be overridden by setting this parameter
+  IndentationWidth: ~
+
+Layout/SpaceInsideBlockBraces:
+  Description: >-
+    Checks that block braces have or don't have surrounding space.
+    For blocks taking parameters, checks that the left brace has
+    or doesn't have trailing space.
+  Enabled: true
+  VersionAdded: '0.49'
+  EnforcedStyle: space
+  SupportedStyles:
+    - space
+    - no_space
+  EnforcedStyleForEmptyBraces: no_space
+  SupportedStylesForEmptyBraces:
+    - space
+    - no_space
+  # Space between `{` and `|`. Overrides `EnforcedStyle` if there is a conflict.
+  SpaceBeforeBlockParameters: true
+
+Layout/SpaceInLambdaLiteral:
+  Description: 'Checks for spaces in lambda literals.'
+  Enabled: true
+  VersionAdded: '0.49'
+  EnforcedStyle: require_space
+  SupportedStyles:
+    - require_no_space
+    - require_space
+
+Layout/SpaceInsideHashLiteralBraces:
+  Description: "Use spaces inside hash literal braces - or don't."
+  StyleGuide: '#spaces-operators'
+  Enabled: true
+  VersionAdded: '0.49'
+  EnforcedStyle: space
+  SupportedStyles:
+    - space
+    - no_space
+    # 'compact' normally requires a space inside hash braces, with the exception
+    # that successive left braces or right braces are collapsed together
+    - compact
+  EnforcedStyleForEmptyBraces: no_space
+  SupportedStylesForEmptyBraces:
+    - space
+    - no_space
+Layout/HashAlignment:
+  Description: >-
+    Align the elements of a hash literal if they span more than
+    one line.
+  Enabled: true
+  AllowMultipleStyles: false
+  VersionAdded: '0.49'
+  VersionChanged: '0.77'
+  # Alignment of entries using hash rocket as separator. Valid values are:
+  #
+  # key - left alignment of keys
+  #   'a' => 2
+  #   'bb' => 3
+  # separator - alignment of hash rockets, keys are right aligned
+  #    'a' => 2
+  #   'bb' => 3
+  # table - left alignment of keys, hash rockets, and values
+  #   'a'  => 2
+  #   'bb' => 3
+  EnforcedHashRocketStyle: table
+  SupportedHashRocketStyles:
+    - key
+    - separator
+    - table
+  EnforcedLastArgumentHashStyle: always_inspect
+  SupportedLastArgumentHashStyles:
+    - always_inspect
+    - always_ignore
+    - ignore_implicit
+    - ignore_explicit
+
+Layout/FirstHashElementLineBreak:
+  Description: >-
+    Checks for a line break before the first element in a
+    multi-line hash.
+  Enabled: true
+  VersionAdded: '0.49'
+
+Layout/FirstHashElementIndentation:
+  Description: 'Checks the indentation of the first key in a hash literal.'
+  Enabled: true
+  VersionAdded: '0.68'
+  VersionChanged: '0.77'
+  # The value `special_inside_parentheses` means that hash literals with braces
+  # that have their opening brace on the same line as a surrounding opening
+  # round parenthesis, shall have their first key indented relative to the
+  # first position inside the parenthesis.
+  #
+  # The value `consistent` means that the indentation of the first key shall
+  # always be relative to the first position of the line where the opening
+  # brace is.
+  #
+  # The value `align_braces` means that the indentation of the first key shall
+  # always be relative to the position of the opening brace.
+  EnforcedStyle: consistent
+  SupportedStyles:
+    - special_inside_parentheses
+    - consistent
+    - align_braces
+  # By default, the indentation width from `Layout/IndentationWidth` is used
+  # But it can be overridden by setting this parameter
+  IndentationWidth: ~
+
+Layout/MultilineHashBraceLayout:
+  Description: >-
+    Checks that the closing brace in a hash literal is
+    either on the same line as the last hash element, or
+    a new line.
+  Enabled: true
+  VersionAdded: '0.49'
+  EnforcedStyle: new_line
+  SupportedStyles:
+    # symmetrical: closing brace is positioned in same way as opening brace
+    # new_line: closing brace is always on a new line
+    # same_line: closing brace is always on same line as last element
+    - symmetrical
+    - new_line
+    - same_line
+
+Layout/CaseIndentation:
+  Description: 'Indentation of when in a case/when/[else/]end.'
+  StyleGuide: '#indent-when-to-case'
+  Enabled: true
+  VersionAdded: '0.49'
+  EnforcedStyle: end
+  SupportedStyles:
+    - case
+    - end
+  IndentOneStep: false
+  # By default, the indentation width from `Layout/IndentationWidth` is used.
+  # But it can be overridden by setting this parameter.
+  # This only matters if `IndentOneStep` is `true`
+  IndentationWidth: ~
+
+Layout/ClosingParenthesisIndentation:
+  Description: 'Checks the indentation of hanging closing parentheses.'
+  Enabled: true
+  VersionAdded: '0.49'
+
+Layout/EndAlignment:
+  Description: 'Align ends correctly.'
+  Enabled: true
+  VersionAdded: '0.53'
+  # The value `keyword` means that `end` should be aligned with the matching
+  # keyword (`if`, `while`, etc.).
+  # The value `variable` means that in assignments, `end` should be aligned
+  # with the start of the variable on the left hand side of `=`. In all other
+  # situations, `end` should still be aligned with the keyword.
+  # The value `start_of_line` means that `end` should be aligned with the start
+  # of the line which the matching keyword appears on.
+  EnforcedStyleAlignWith: keyword
+  SupportedStylesAlignWith:
+    - keyword
+    - variable
+    - start_of_line
+  AutoCorrect: false
+  Severity: warning
+
+Layout/BlockAlignment:
+  Description: 'Align block ends correctly.'
+  Enabled: true
+  VersionAdded: '0.53'
+  # The value `start_of_block` means that the `end` should be aligned with line
+  # where the `do` keyword appears.
+  # The value `start_of_line` means it should be aligned with the whole
+  # expression's starting line.
+  # The value `either` means both are allowed.
+  EnforcedStyleAlignWith: start_of_line
+  SupportedStylesAlignWith:
+    - either
+    - start_of_block
+    - start_of_line
+
+#################### Lint ##################################
+### Warnings
+
+Lint/AmbiguousBlockAssociation:
+  Description: >-
+    Checks for ambiguous block association with method when param passed without
+    parentheses.
+  StyleGuide: '#syntax'
+  Enabled: false
+  VersionAdded: '0.48'
+
+#################### Metrics ###############################
+
+Metrics/AbcSize:
+  Description: >-
+    A calculated magnitude based on number of assignments,
+    branches, and conditions.
+  Reference:
+    - http://c2.com/cgi/wiki?AbcMetric
+    - https://en.wikipedia.org/wiki/ABC_Software_Metric
+  Enabled: true
+  VersionAdded: '0.27'
+  VersionChanged: '0.66'
+  # The ABC size is a calculated magnitude, so this number can be an Integer or
+  # a Float.
+  Max: 20
+
+# Avoid complex methods.
+Metrics/CyclomaticComplexity:
+  Description: >-
+    A complexity metric that is strongly correlated to the number
+    of test cases needed to validate a method.
+  Enabled: true
+  VersionAdded: '0.25'
+  Max: 20
+
+Metrics/MethodLength:
+  Description: 'Avoid methods longer than 10 lines of code.'
+  StyleGuide: '#short-methods'
+  Enabled: false
+  VersionAdded: '0.25'
+  VersionChanged: '0.59.2'
+  CountComments: false  # count full line comments?
+  Max: 10
+  ExcludedMethods: []
+
+Metrics/ParameterLists:
+  Description: 'Avoid parameter lists longer than three or four parameters.'
+  StyleGuide: '#too-many-params'
+  Enabled: true
+  VersionAdded: '0.25'
+  Max: 8
+  CountKeywordArgs: true
+
+Metrics/PerceivedComplexity:
+  Description: >-
+    A complexity metric geared towards measuring complexity for a
+    human reader.
+  Enabled: true
+  VersionAdded: '0.25'
+  Max: 20
+
+Metrics/ClassLength:
+  Description: 'Avoid classes longer than 100 lines of code.'
+  Enabled: false
+  Max: 150
+
+Metrics/ModuleLength:
+  Description: 'Avoid modules longer than 100 lines of code.'
+  Enabled: false
+  Max: 150
+
+Metrics/BlockLength:
+  Description: 'Avoid block longer than 100 lines of code.'
+  Enabled: false
+  Max: 100
+
+#################### Naming ##############################
+
+Naming/ConstantName:
+  Description: 'Constants should use SCREAMING_SNAKE_CASE.'
+  StyleGuide: '#screaming-snake-case'
+  Enabled: false
+  VersionAdded: '0.50'
+
+Naming/VariableNumber:
+  Description: 'Use the configured style when numbering variables.'
+  Enabled: true
+  VersionAdded: '0.50'
+  EnforcedStyle: snake_case
+  SupportedStyles:
+    - snake_case
+    - normalcase
+    - non_integer
+
+Naming/PredicateName:
+  Description: 'Check the names of predicate methods.'
+  StyleGuide: '#bool-methods-qmark'
+  Enabled: false
+  VersionAdded: '0.50'
+  VersionChanged: '0.77'
+  # Predicate name prefixes.
+  NamePrefix:
+    - is_
+    - has_
+    - have_
+  # Predicate name prefixes that should be removed.
+  ForbiddenPrefixes:
+    - is_
+    - has_
+    - have_
+  # Predicate names which, despite having a forbidden prefix, or no `?`,
+  # should still be accepted
+  AllowedMethods:
+    - is_a?
+  # Method definition macros for dynamically generated methods.
+  MethodDefinitionMacros:
+    - define_method
+    - define_singleton_method
+  # Exclude Rspec specs because there is a strong convention to write spec
+  # helpers in the form of `have_something` or `be_something`.
+  Exclude:
+    - 'spec/**/*'
+
+Naming/AsciiIdentifiers:
+  Description: 'Use only ascii symbols in identifiers and constants.'
+  StyleGuide: '#english-identifiers'
+  Enabled: false
+  VersionAdded: '0.50'
+  VersionChanged: '0.87'
+  AsciiConstants: true
+
+#################### Security ##############################
+
+Security/YAMLLoad:
+  Description: >-
+    Prefer usage of `YAML.safe_load` over `YAML.load` due to potential
+    security issues. See reference for more information.
+  Reference: 'https://ruby-doc.org/stdlib-2.7.0/libdoc/yaml/rdoc/YAML.html#module-YAML-label-Security'
+  Enabled: true
+  VersionAdded: '0.47'
+  SafeAutoCorrect: true
+
+#################### Style ###############################
+
+Style/Alias:
+  Description: 'Use alias instead of alias_method.'
+  StyleGuide: '#alias-method-lexically'
+  Enabled: false
+  VersionAdded: '0.9'
+  VersionChanged: '0.36'
+  EnforcedStyle: prefer_alias
+  SupportedStyles:
+    - prefer_alias
+    - prefer_alias_method
+
+Style/ClassAndModuleChildren:
+  Description: 'Checks style of children classes and modules.'
+  StyleGuide: '#namespace-definition'
+  # Moving from compact to nested children requires knowledge of whether the
+  # outer parent is a module or a class. Moving from nested to compact requires
+  # verification that the outer parent is defined elsewhere. Rubocop does not
+  # have the knowledge to perform either operation safely and thus requires
+  # manual oversight.
+  SafeAutoCorrect: false
+  AutoCorrect: false
+  Enabled: false
+  VersionAdded: '0.19'
+  #
+  # Basically there are two different styles:
+  #
+  # `nested` - have each child on a separate line
+  #   class Foo
+  #     class Bar
+  #     end
+  #   end
+  #
+  # `compact` - combine definitions as much as possible
+  #   class Foo::Bar
+  #   end
+  #
+  # The compact style is only forced, for classes or modules with one child.
+  EnforcedStyle: nested
+  SupportedStyles:
+    - nested
+    - compact
+
+Style/Documentation:
+  Description: 'Document classes and non-namespace modules.'
+  Enabled: false
+  VersionAdded: '0.9'
+  Exclude:
+    - 'spec/**/*'
+    - 'test/**/*'
+
+Style/FrozenStringLiteralComment:
+  Description: >-
+    Add the frozen_string_literal comment to the top of files
+    to help transition to frozen string literals by default.
+  Enabled: false
+  VersionAdded: '0.36'
+  VersionChanged: '0.69'
+  EnforcedStyle: always
+  SupportedStyles:
+    # `always` will always add the frozen string literal comment to a file
+    # regardless of the Ruby version or if `freeze` or `<<` are called on a
+    # string literal. If you run code against multiple versions of Ruby, it is
+    # possible that this will create errors in Ruby 2.3.0+.
+    - always
+    # `never` will enforce that the frozen string literal comment does not
+    # exist in a file.
+    - never
+
+Style/HashAsLastArrayItem:
+  Description: >-
+    Checks for presence or absence of braces around hash literal as a last
+    array item depending on configuration.
+  StyleGuide: '#hash-literal-as-last-array-item'
+  Enabled: true
+  VersionAdded: '0.88'
+  EnforcedStyle: no_braces
+  SupportedStyles:
+    - braces
+    - no_braces
+
+Style/HashSyntax:
+  Description: >-
+    Prefer Ruby 1.9 hash syntax { a: 1, b: 2 } over 1.8 syntax
+    { :a => 1, :b => 2 }.
+  StyleGuide: '#hash-literals'
+  Enabled: true
+  VersionAdded: '0.9'
+  VersionChanged: '0.43'
+  EnforcedStyle: hash_rockets
+  SupportedStyles:
+    # checks for 1.9 syntax (e.g. {a: 1}) for all symbol keys
+    - ruby19
+    # checks for hash rocket syntax for all hashes
+    - hash_rockets
+    # forbids mixed key syntaxes (e.g. {a: 1, :b => 2})
+    - no_mixed_keys
+    # enforces both ruby19 and no_mixed_keys styles
+    - ruby19_no_mixed_keys
+  # Force hashes that have a symbol value to use hash rockets
+  UseHashRocketsWithSymbolValues: true
+  # Do not suggest { a?: 1 } over { :a? => 1 } in ruby19 style
+  PreferHashRocketsForNonAlnumEndingSymbols: true
+
+Style/Lambda:
+  Description: 'Use the new lambda literal syntax for single-line blocks.'
+  StyleGuide: '#lambda-multi-line'
+  Enabled: false
+  VersionAdded: '0.9'
+  VersionChanged: '0.40'
+  EnforcedStyle: line_count_dependent
+  SupportedStyles:
+    - line_count_dependent
+    - lambda
+    - literal
+
+Style/NumericLiterals:
+  Description: >-
+    Add underscores to large numeric literals to improve their
+    readability.
+  StyleGuide: '#underscores-in-numerics'
+  Enabled: false
+  VersionAdded: '0.9'
+  VersionChanged: '0.48'
+  MinDigits: 5
+  Strict: false
+
+Style/ParenthesesAroundCondition:
+  Enabled: false
+
+Style/RedundantSelf:
+  Description: "Don't use self where it's not needed."
+  StyleGuide: '#no-self-unless-required'
+  Enabled: false
+  VersionAdded: '0.10'
+  VersionChanged: '0.13'
+
+Style/RegexpLiteral:
+  Description: 'Use / or %r around regular expressions.'
+  StyleGuide: '#percent-r'
+  Enabled: true
+  VersionAdded: '0.9'
+  VersionChanged: '0.30'
+  EnforcedStyle: slashes
+  # slashes: Always use slashes.
+  # percent_r: Always use `%r`.
+  # mixed: Use slashes on single-line regexes, and `%r` on multi-line regexes.
+  SupportedStyles:
+    - slashes
+    - percent_r
+    - mixed
+  # If `false`, the cop will always recommend using `%r` if one or more slashes
+  # are found in the regexp string.
+  AllowInnerSlashes: true
+
+Style/RescueStandardError:
+  Description: 'Avoid rescuing without specifying an error class.'
+  Enabled: false
+  VersionAdded: '0.52'
+  EnforcedStyle: explicit
+  # implicit: Do not include the error class, `rescue`
+  # explicit: Require an error class `rescue StandardError`
+  SupportedStyles:
+    - implicit
+    - explicit
+
+Style/SymbolArray:
+  Description: 'Use %i or %I for arrays of symbols.'
+  StyleGuide: '#percent-i'
+  Enabled: false
+  VersionAdded: '0.9'
+  VersionChanged: '0.49'
+  EnforcedStyle: percent
+  MinSize: 2
+  SupportedStyles:
+    - percent
+    - brackets
+
+Style/WordArray:
+  Description: 'Use %w or %W for arrays of words.'
+  StyleGuide: '#percent-w'
+  Enabled: true
+  VersionAdded: '0.9'
+  VersionChanged: '0.36'
+  EnforcedStyle: percent
+  SupportedStyles:
+    # percent style: %w(word1 word2)
+    - percent
+    # bracket style: ['word1', 'word2']
+    - brackets
+  # The `MinSize` option causes the `WordArray` rule to be ignored for arrays
+  # smaller than a certain size. The rule is only applied to arrays
+  # whose element count is greater than or equal to `MinSize`.
+  MinSize: 2
+  # The regular expression `WordRegex` decides what is considered a word.
+  WordRegex: !ruby/regexp '/\A(?:\p{Word}|\p{Word}-\p{Word}|\n|\t)+\z/'
+
+Style/RescueModifier:
+  Description: 'Avoid using rescue in its modifier form.'
+  StyleGuide: '#no-rescue-modifiers'
+  Enabled: false
+  VersionAdded: '0.9'
+  VersionChanged: '0.34'

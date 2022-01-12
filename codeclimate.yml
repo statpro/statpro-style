@@ -1,0 +1,81 @@
+version: "2"
+checks:
+  argument-count:
+    enabled: false
+    config:
+      threshold: 8
+  complex-logic:
+    enabled: true
+    config:
+      threshold: 4
+  file-lines:
+    enabled: false
+    config:
+      threshold: 250
+  method-complexity:
+    enabled: true
+    config:
+      threshold: 15
+  method-count:
+    enabled: true
+    config:
+      threshold: 30
+  method-lines:
+    enabled: false
+    config:
+      threshold: 25
+  nested-control-flow:
+    enabled: true
+    config:
+      threshold: 4
+  return-statements:
+    enabled: true
+    config:
+      threshold: 10
+  similar-code:
+    enabled: false
+    config:
+      threshold: #language-specific defaults. overrides affect all languages.
+  identical-code:
+    enabled: true
+    config:
+      threshold: #language-specific defaults. overrides affect all languages.
+
+plugins:
+  rubocop:
+    enabled: true
+    channel: rubocop-0-92 # Minimum version to support ruby 2.6
+    config:
+      file: "default_rubocop.yml"
+  eslint:
+    enabled: true
+  brakeman:
+    enabled: true
+  haml-lint:
+    enabled: true
+    config:
+      file: "default_haml-lint.yml"
+  cppcheck:
+    enabled: true
+    config:
+      check: all
+      language: c
+      platform: unix64
+      includes:
+      - include/
+      max_configs: 42
+      inconclusive: false
+      inline-suppr: true
+
+exclude_patterns:
+- config/**/*
+- db/**/*
+- doc/**/*
+- modules/security_token_service/**/*
+- modules/user_initialization_service/**/*
+- modules/webhook_service/**/*
+- public/**/*
+- script/**/*
+- spec/**/*
+- vendor/**/*
+- "app/assets/javascripts/jquery.form.js"
