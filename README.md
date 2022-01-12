@@ -8,7 +8,7 @@ Add this line to your application's Gemfile:
 
 ```ruby
 group :test, :development do
-  gem 'statpro-style', :git => 'https://github.com/FritzViljoen/statpro-style', :branch => 'main'
+  gem 'statpro-style', :git => 'https://github.com/statpro/statpro-style', :branch => 'main'
 end
 ```
 
@@ -45,9 +45,9 @@ For codeclimate to run please add the following to `.codeclimate.yml` to overrid
 ```yaml
 prepare:
   fetch:
-    - url: "https://raw.githubusercontent.com/Statpro/statpro-style/master/default_rubocop.yml"
+    - url: "https://raw.githubusercontent.com/statpro/statpro-style/master/default_rubocop.yml"
       path: ".codeclimate-rubocop.yml"
-    - url: "https://raw.githubusercontent.com/Statpro/statpro-style/master/default_haml-lint.yml"
+    - url: "https://raw.githubusercontent.com/statpro/statpro-style/master/default_haml-lint.yml"
       path: ".codeclimate-haml-lint.yml"
 ```
 
