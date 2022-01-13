@@ -3,6 +3,15 @@
 # default_inherit_from_conf:
 #  https://github.com/rubocop-hq/rubocop/blob/master/config/default.yml
 
+AllCops:
+  NewCops: disable
+
+  Exclude:
+    - 'db/**/*'
+    - 'modules/security_token_service/**/*'
+    - 'modules/user_initialization_service/**/*'
+    - 'modules/webhook_service/**/*'
+
 #################### Layout ###########################
 
 Layout/ArgumentAlignment:
