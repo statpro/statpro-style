@@ -8,7 +8,7 @@ Add this line to your application's Gemfile:
 
 ```ruby
 group :test, :development do
-  gem 'statpro-style', :git => 'https://github.com/statpro/statpro-style', :branch => 'main'
+  gem 'statpro-style', :git => 'https://github.com/statpro/statpro-style', :branch => 'master'
 end
 ```
 
