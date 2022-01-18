@@ -175,8 +175,8 @@ Layout/FirstArgumentIndentation:
     # Same as `special_for_inner_method_call` except that the special rule only
     # applies if the outer method call encloses its arguments in parentheses.
     - special_for_inner_method_call_in_parentheses
-  # By default the indentation width from `Layout/IndentationWidth` is used,
-  # but it can be overridden by setting this parameter.
+  # By default, the indentation width from `Layout/IndentationWidth` is used
+  # But it can be overridden by setting this parameter
   IndentationWidth: ~
 
 Layout/FirstMethodArgumentLineBreak:
@@ -548,9 +548,10 @@ Metrics/MethodLength:
   StyleGuide: '#short-methods'
   Enabled: false
   VersionAdded: '0.25'
-  VersionChanged: '0.59.2'
+  VersionChanged: '0.87'
   CountComments: false  # count full line comments?
   Max: 10
+  CountAsOne: []
   ExcludedMethods: []
 
 Metrics/ParameterLists:
@@ -697,19 +698,17 @@ Style/ClassAndModuleChildren:
 Style/CommentAnnotation:
   Description: >-
     Checks formatting of special comments
-    (TODO, FIXME, OPTIMIZE, HACK, REVIEW, NOTE).
+    (TODO, FIXME, OPTIMIZE, HACK, REVIEW).
   StyleGuide: '#annotate-keywords'
   Enabled: true
   VersionAdded: '0.10'
-  VersionChanged: '1.20'
+  VersionChanged: '0.31'
   Keywords:
     - TODO
     - FIXME
     - OPTIMIZE
     - HACK
     - REVIEW
-    - NOTE
-  RequireColon: true
 
 Style/Documentation:
   Description: 'Document classes and non-namespace modules.'
