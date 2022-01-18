@@ -66,6 +66,11 @@ Layout/ArrayAlignment:
   # but it can be overridden by setting this parameter.
   IndentationWidth: ~
 
+Layout/BlockEndNewline:
+  Description: 'Put end statement of multiline block on its own line.'
+  Enabled: true
+  VersionAdded: '0.49'
+
 Layout/EmptyLinesAroundBlockBody:
   Description: "Keeps track of empty lines around block bodies."
   StyleGuide: '#empty-lines-around-bodies'
@@ -196,6 +201,11 @@ Layout/MultilineArrayBraceLayout:
     - symmetrical
     - new_line
     - same_line
+
+Layout/MultilineBlockLayout:
+  Description: 'Ensures newlines after multiline block do statements.'
+  Enabled: true
+  VersionAdded: '0.49'
 
 Layout/MultilineMethodCallBraceLayout:
   Description: >-
@@ -426,6 +436,14 @@ Layout/LineLength:
   # elements. Strings will be converted to Regexp objects. A line that matches
   # any regular expression listed in this option will be ignored by LineLength.
   IgnoredPatterns: []
+
+Layout/TrailingWhitespace:
+  Description: 'Avoid trailing whitespace.'
+  StyleGuide: '#no-trailing-whitespace'
+  Enabled: true
+  VersionAdded: '0.49'
+  VersionChanged: '1.0'
+  AllowInHeredoc: false
 
 #################### Lint ##################################
 ### Warnings
