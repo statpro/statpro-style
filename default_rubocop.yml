@@ -790,6 +790,16 @@ Style/NumericLiterals:
   MinDigits: 5
   Strict: false
 
+Style/NumericLiteralPrefix:
+  Description: 'Use smallcase prefixes for numeric literals.'
+  StyleGuide: '#numeric-literal-prefixes'
+  Enabled: true
+  VersionAdded: '0.41'
+  EnforcedOctalStyle: zero_with_o
+  SupportedOctalStyles:
+    - zero_with_o
+    - zero_only
+
 Style/ParenthesesAroundCondition:
   Enabled: false
 
