@@ -514,6 +514,15 @@ Lint/AmbiguousBlockAssociation:
   Enabled: false
   VersionAdded: '0.48'
 
+Lint/ParenthesesAsGroupedExpression:
+  Description: >-
+    Checks for method calls with a space before the opening
+    parenthesis.
+  StyleGuide: '#parens-no-spaces'
+  Enabled: true
+  VersionAdded: '0.12'
+  VersionChanged: '0.83'
+
 #################### Metrics ###############################
 
 Metrics/AbcSize:
