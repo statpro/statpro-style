@@ -37,6 +37,35 @@ Layout/ArgumentAlignment:
   # but it can be overridden by setting this parameter.
   IndentationWidth: ~
 
+Layout/ArrayAlignment:
+  Description: >-
+    Align the elements of an array literal if they span more than
+    one line.
+  StyleGuide: '#no-double-indent'
+  Enabled: true
+  VersionAdded: '0.49'
+  VersionChanged: '0.77'
+  # Alignment of elements of a multi-line array.
+  #
+  # The `with_first_parameter` style aligns the following lines along the same
+  # column as the first element.
+  #
+  #     array = [1, 2, 3,
+  #              4, 5, 6]
+  #
+  # The `with_fixed_indentation` style aligns the following lines with one
+  # level of indentation relative to the start of the line with start of array.
+  #
+  #     array = [1, 2, 3,
+  #       4, 5, 6]
+  EnforcedStyle: with_fixed_indentation
+  SupportedStyles:
+    - with_first_element
+    - with_fixed_indentation
+  # By default the indentation width from `Layout/IndentationWidth` is used,
+  # but it can be overridden by setting this parameter.
+  IndentationWidth: ~
+
 Layout/EmptyLinesAroundBlockBody:
   Description: "Keeps track of empty lines around block bodies."
   StyleGuide: '#empty-lines-around-bodies'
@@ -120,6 +149,38 @@ Layout/FirstArrayElementIndentation:
   # but it can be overridden by setting this parameter.
   IndentationWidth: ~
 
+Layout/FirstArgumentIndentation:
+  Description: 'Checks the indentation of the first argument in a method call.'
+  Enabled: true
+  VersionAdded: '0.68'
+  VersionChanged: '0.77'
+  EnforcedStyle: special_for_inner_method_call_in_parentheses
+  SupportedStyles:
+    # The first parameter should always be indented one step more than the
+    # preceding line.
+    - consistent
+    # The first parameter should always be indented one level relative to the
+    # parent that is receiving the parameter
+    - consistent_relative_to_receiver
+    # The first parameter should normally be indented one step more than the
+    # preceding line, but if it's a parameter for a method call that is itself
+    # a parameter in a method call, then the inner parameter should be indented
+    # relative to the inner method.
+    - special_for_inner_method_call
+    # Same as `special_for_inner_method_call` except that the special rule only
+    # applies if the outer method call encloses its arguments in parentheses.
+    - special_for_inner_method_call_in_parentheses
+  # By default the indentation width from `Layout/IndentationWidth` is used,
+  # but it can be overridden by setting this parameter.
+  IndentationWidth: ~
+
+Layout/FirstMethodArgumentLineBreak:
+  Description: >-
+    Checks for a line break before the first argument in a
+    multi-line method call.
+  Enabled: true
+  VersionAdded: '0.49'
+
 Layout/MultilineArrayBraceLayout:
   Description: >-
     Checks that the closing brace in an array literal is
@@ -132,6 +193,22 @@ Layout/MultilineArrayBraceLayout:
     # symmetrical: closing brace is positioned in same way as opening brace
     # new_line: closing brace is always on a new line
     # same_line: closing brace is always on the same line as last element
+    - symmetrical
+    - new_line
+    - same_line
+
+Layout/MultilineMethodCallBraceLayout:
+  Description: >-
+    Checks that the closing brace in a method call is
+    either on the same line as the last method argument, or
+    a new line.
+  Enabled: true
+  VersionAdded: '0.49'
+  EnforcedStyle: symmetrical
+  SupportedStyles:
+    # symmetrical: closing brace is positioned in same way as opening brace
+    # new_line: closing brace is always on a new line
+    # same_line: closing brace is always on the same line as last argument
     - symmetrical
     - new_line
     - same_line
