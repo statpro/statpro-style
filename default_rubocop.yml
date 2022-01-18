@@ -238,6 +238,22 @@ Layout/MultilineMethodCallIndentation:
   # But it can be overridden by setting this parameter
   IndentationWidth: ~
 
+Layout/SpaceInsideArrayLiteralBrackets:
+  Description: 'Checks the spacing inside array literal brackets.'
+  Enabled: true
+  VersionAdded: '0.52'
+  EnforcedStyle: no_space
+  SupportedStyles:
+    - space
+    - no_space
+    # 'compact' normally requires a space inside the brackets, with the exception
+    # that successive left brackets or right brackets are collapsed together
+    - compact
+  EnforcedStyleForEmptyBrackets: no_space
+  SupportedStylesForEmptyBrackets:
+    - space
+    - no_space
+
 Layout/SpaceInsideBlockBraces:
   Description: >-
     Checks that block braces have or don't have surrounding space.
