@@ -6,6 +6,21 @@
 AllCops:
   NewCops: disable
 
+Bundler/OrderedGems:
+  Description: >-
+    Gems within groups in the Gemfile should be alphabetically sorted.
+  Enabled: false
+  VersionAdded: '0.46'
+  VersionChanged: '0.47'
+  TreatCommentsAsGroupSeparators: true
+  # By default, "-" and "_" are ignored for order purposes.
+  # This can be overridden by setting this parameter to true.
+  ConsiderPunctuation: false
+  Include:
+    - '**/*.gemfile'
+    - '**/Gemfile'
+    - '**/gems.rb'
+
 #################### Layout ###########################
 
 Layout/ArgumentAlignment:
