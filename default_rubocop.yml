@@ -663,6 +663,23 @@ Style/ClassAndModuleChildren:
     - nested
     - compact
 
+Style/CommentAnnotation:
+  Description: >-
+    Checks formatting of special comments
+    (TODO, FIXME, OPTIMIZE, HACK, REVIEW, NOTE).
+  StyleGuide: '#annotate-keywords'
+  Enabled: true
+  VersionAdded: '0.10'
+  VersionChanged: '1.20'
+  Keywords:
+    - TODO
+    - FIXME
+    - OPTIMIZE
+    - HACK
+    - REVIEW
+    - NOTE
+  RequireColon: true
+
 Style/Documentation:
   Description: 'Document classes and non-namespace modules.'
   Enabled: false
