@@ -4,7 +4,7 @@
 #  https://github.com/rubocop-hq/rubocop/blob/master/config/default.yml
 
 AllCops:
-  NewCops: disable
+  NewCops: enable
 
 Bundler/OrderedGems:
   Description: >-
