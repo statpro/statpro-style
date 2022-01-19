@@ -504,7 +504,6 @@ Layout/TrailingWhitespace:
   AllowInHeredoc: false
 
 #################### Lint ##################################
-### Warnings
 
 Lint/AmbiguousBlockAssociation:
   Description: >-
@@ -765,6 +764,12 @@ Style/Documentation:
   Exclude:
     - 'spec/**/*'
     - 'test/**/*'
+
+Style/EachWithObject:
+  Description: 'Prefer `each_with_object` over `inject` or `reduce`.'
+  Enabled: false
+  VersionAdded: '0.22'
+  VersionChanged: '0.42'
 
 Style/FrozenStringLiteralComment:
   Description: >-
