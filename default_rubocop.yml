@@ -514,6 +514,12 @@ Lint/AmbiguousBlockAssociation:
   Enabled: false
   VersionAdded: '0.48'
 
+Lint/ConstantDefinitionInBlock:
+  Description: 'Do not define constants within a block.'
+  StyleGuide: '#no-constant-definition-in-block'
+  Enabled: false
+  VersionAdded: '0.91'
+
 Lint/ParenthesesAsGroupedExpression:
   Description: >-
     Checks for method calls with a space before the opening
