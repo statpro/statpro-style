@@ -523,6 +523,22 @@ Lint/ParenthesesAsGroupedExpression:
   VersionAdded: '0.12'
   VersionChanged: '0.83'
 
+Lint/MissingSuper:
+  Description: >-
+    This cop checks for the presence of constructors and lifecycle callbacks
+    without calls to `super`'.
+  Enabled: false
+  VersionAdded: '0.89'
+
+Lint/UnusedBlockArgument:
+  Description: 'Checks for unused block arguments.'
+  StyleGuide: '#underscore-unused-vars'
+  Enabled: false
+  VersionAdded: '0.21'
+  VersionChanged: '0.22'
+  IgnoreEmptyBlocks: true
+  AllowUnusedKeywordArguments: false
+
 Lint/UnusedMethodArgument:
   Description: 'Checks for unused method arguments.'
   StyleGuide: '#underscore-unused-vars'
@@ -610,7 +626,7 @@ Naming/ConstantName:
 
 Naming/VariableNumber:
   Description: 'Use the configured style when numbering variables.'
-  Enabled: true
+  Enabled: false
   VersionAdded: '0.50'
   EnforcedStyle: snake_case
   SupportedStyles:
@@ -667,6 +683,17 @@ Security/YAMLLoad:
   SafeAutoCorrect: true
 
 #################### Style ###############################
+
+Style/AccessorGrouping:
+  Description: 'Checks for grouping of accessors in `class` and `module` bodies.'
+  Enabled: false
+  VersionAdded: '0.87'
+  EnforcedStyle: grouped
+  SupportedStyles:
+    # separated: each accessor goes in a separate statement.
+    # grouped: accessors are grouped into a single statement.
+    - separated
+    - grouped
 
 Style/Alias:
   Description: 'Use alias instead of alias_method.'
