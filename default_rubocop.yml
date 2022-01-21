@@ -563,7 +563,7 @@ Metrics/AbcSize:
   Reference:
     - http://c2.com/cgi/wiki?AbcMetric
     - https://en.wikipedia.org/wiki/ABC_Software_Metric
-  Enabled: true
+  Enabled: false
   VersionAdded: '0.27'
   VersionChanged: '0.66'
   # The ABC size is a calculated magnitude, so this number can be an Integer or
@@ -628,6 +628,33 @@ Naming/ConstantName:
   StyleGuide: '#screaming-snake-case'
   Enabled: false
   VersionAdded: '0.50'
+
+Naming/MethodParameterName:
+  Description: >-
+    Checks for method parameter names that contain capital letters,
+    end in numbers, or do not meet a minimal length.
+  Enabled: false
+  VersionAdded: '0.53'
+  VersionChanged: '0.77'
+  # Parameter names may be equal to or greater than this value
+  MinNameLength: 3
+  AllowNamesEndingInNumbers: true
+  # Allowed names that will not register an offense
+  AllowedNames:
+    - at
+    - by
+    - db
+    - id
+    - in
+    - io
+    - ip
+    - of
+    - 'on'
+    - os
+    - pp
+    - to
+  # Forbidden names that will register an offense
+  ForbiddenNames: []
 
 Naming/VariableNumber:
   Description: 'Use the configured style when numbering variables.'
@@ -824,6 +851,13 @@ Style/HashSyntax:
   # Do not suggest { a?: 1 } over { :a? => 1 } in ruby19 style
   PreferHashRocketsForNonAlnumEndingSymbols: true
 
+Style/HashTransformValues:
+  Description: 'Prefer `transform_values` over `each_with_object`, `map`, or `to_h`.'
+  Enabled: false
+  VersionAdded: '0.80'
+  VersionChanged: '0.90'
+  Safe: false
+
 Style/Lambda:
   Description: 'Use the new lambda literal syntax for single-line blocks.'
   StyleGuide: '#lambda-multi-line'
@@ -835,6 +869,22 @@ Style/Lambda:
     - line_count_dependent
     - lambda
     - literal
+
+Style/MutableConstant:
+  Description: 'Do not assign mutable objects to constants.'
+  Enabled: false
+  VersionAdded: '0.34'
+  VersionChanged: '0.65'
+  EnforcedStyle: literals
+  SupportedStyles:
+    # literals: freeze literals assigned to constants
+    # strict: freeze all constants
+    # Strict mode is considered an experimental feature. It has not been updated
+    # with an exhaustive list of all methods that will produce frozen objects so
+    # there is a decent chance of getting some false positives. Luckily, there is
+    # no harm in freezing an already frozen object.
+    - literals
+    - strict
 
 Style/NumericLiterals:
   Description: >-
@@ -895,6 +945,15 @@ Style/RescueStandardError:
   SupportedStyles:
     - implicit
     - explicit
+
+Style/Semicolon:
+  Description: "Don't use semicolons to terminate expressions."
+  StyleGuide: '#no-semicolon'
+  Enabled: false
+  VersionAdded: '0.9'
+  VersionChanged: '0.19'
+  # Allow `;` to separate several expressions on the same line.
+  AllowAsExpressionSeparator: false
 
 Style/StringLiterals:
   Description: 'Checks if uses of quotes match the configured preference.'
