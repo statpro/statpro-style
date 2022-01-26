@@ -2,6 +2,6 @@
 
 module Statpro
   module Style
-    VERSION = '0.2.6'
+    VERSION = '1.0.0'
   end
 end

@@ -8,7 +8,7 @@ Add this line to your application's Gemfile:
 
 ```ruby
 group :test, :development do
-  gem 'statpro-style', :git => 'https://github.com/statpro/statpro-style', :branch => 'master'
+  gem 'statpro-style', '> 0', :git => 'https://github.com/statpro/statpro-style', :branch => 'master'
 end
 ```
 
@@ -25,7 +25,7 @@ $ bundle install
 ```
 
 ## Usage
-To allow local developmet linting with rubocop, create a `.rubocop.yml` or `.codeclimate-rubocop.yml` with the following directives:
+To allow local development linting with rubocop, create a `.rubocop.yml` or `.codeclimate-rubocop.yml` with the following directives:
 
 ```yaml
 inherit_gem:
@@ -39,7 +39,7 @@ inherit_gem:
     - default_haml-lint.yml
 ```
 
-For codeclimate to run please add the following to `.codeclimate.yml` to override the commited files. 
+For codeclimate to run please add the following to `.codeclimate.yml` to override the committed files. 
 - https://docs.codeclimate.com/docs/configuring-the-prepare-step
 
 ```yaml
@@ -52,3 +52,10 @@ prepare:
 ```
 
 You do not need to include rubocop directly in your application's dependencies. Statpro-style will include a specific version of `rubocop` and `rubocop-rspec` that is shared across all projects.
+
+## Updating the Gem
+
+After updating this gem run the following in your application. 
+```bash
+$ bundle update statpro-style
+```

@@ -4,12 +4,12 @@
 #  https://github.com/rubocop-hq/rubocop/blob/master/config/default.yml
 
 AllCops:
-  NewCops: enable
+  NewCops: disable
 
 Bundler/OrderedGems:
   Description: >-
     Gems within groups in the Gemfile should be alphabetically sorted.
-  Enabled: false
+  Enabled: true
   VersionAdded: '0.46'
   VersionChanged: '0.47'
   TreatCommentsAsGroupSeparators: true
@@ -52,39 +52,39 @@ Layout/ArgumentAlignment:
   # but it can be overridden by setting this parameter.
   IndentationWidth: ~
 
-Layout/ArrayAlignment:
-  Description: >-
-    Align the elements of an array literal if they span more than
-    one line.
-  StyleGuide: '#no-double-indent'
-  Enabled: true
-  VersionAdded: '0.49'
-  VersionChanged: '0.77'
-  # Alignment of elements of a multi-line array.
-  #
-  # The `with_first_parameter` style aligns the following lines along the same
-  # column as the first element.
-  #
-  #     array = [1, 2, 3,
-  #              4, 5, 6]
-  #
-  # The `with_fixed_indentation` style aligns the following lines with one
-  # level of indentation relative to the start of the line with start of array.
-  #
-  #     array = [1, 2, 3,
-  #       4, 5, 6]
-  EnforcedStyle: with_fixed_indentation
-  SupportedStyles:
-    - with_first_element
-    - with_fixed_indentation
-  # By default the indentation width from `Layout/IndentationWidth` is used,
-  # but it can be overridden by setting this parameter.
-  IndentationWidth: ~
-
-Layout/BlockEndNewline:
-  Description: 'Put end statement of multiline block on its own line.'
-  Enabled: true
-  VersionAdded: '0.49'
+#Layout/ArrayAlignment:
+#  Description: >-
+#    Align the elements of an array literal if they span more than
+#    one line.
+#  StyleGuide: '#no-double-indent'
+#  Enabled: true
+#  VersionAdded: '0.49'
+#  VersionChanged: '0.77'
+#  # Alignment of elements of a multi-line array.
+#  #
+#  # The `with_first_parameter` style aligns the following lines along the same
+#  # column as the first element.
+#  #
+#  #     array = [1, 2, 3,
+#  #              4, 5, 6]
+#  #
+#  # The `with_fixed_indentation` style aligns the following lines with one
+#  # level of indentation relative to the start of the line with start of array.
+#  #
+#  #     array = [1, 2, 3,
+#  #       4, 5, 6]
+#  EnforcedStyle: with_fixed_indentation
+#  SupportedStyles:
+#    - with_first_element
+#    - with_fixed_indentation
+#  # By default the indentation width from `Layout/IndentationWidth` is used,
+#  # but it can be overridden by setting this parameter.
+#  IndentationWidth: ~
+#
+#Layout/BlockEndNewline:
+#  Description: 'Put end statement of multiline block on its own line.'
+#  Enabled: true
+#  VersionAdded: '0.49'
 
 Layout/EmptyLinesAroundBlockBody:
   Description: "Keeps track of empty lines around block bodies."
@@ -169,18 +169,18 @@ Layout/FirstArrayElementIndentation:
   # but it can be overridden by setting this parameter.
   IndentationWidth: ~
 
-Layout/FirstArgumentIndentation:
-  Description: 'Checks the indentation of the first argument in a method call.'
-  Enabled: true
-  VersionAdded: '0.68'
-  VersionChanged: '0.77'
-
-Layout/FirstMethodArgumentLineBreak:
-  Description: >-
-    Checks for a line break before the first argument in a
-    multi-line method call.
-  Enabled: true
-  VersionAdded: '0.49'
+#Layout/FirstArgumentIndentation:
+#  Description: 'Checks the indentation of the first argument in a method call.'
+#  Enabled: true
+#  VersionAdded: '0.68'
+#  VersionChanged: '0.77'
+#
+#Layout/FirstMethodArgumentLineBreak:
+#  Description: >-
+#    Checks for a line break before the first argument in a
+#    multi-line method call.
+#  Enabled: true
+#  VersionAdded: '0.49'
 
 Layout/MultilineArrayBraceLayout:
   Description: >-
@@ -198,26 +198,26 @@ Layout/MultilineArrayBraceLayout:
     - new_line
     - same_line
 
-Layout/MultilineBlockLayout:
-  Description: 'Ensures newlines after multiline block do statements.'
-  Enabled: true
-  VersionAdded: '0.49'
-
-Layout/MultilineMethodCallBraceLayout:
-  Description: >-
-    Checks that the closing brace in a method call is
-    either on the same line as the last method argument, or
-    a new line.
-  Enabled: true
-  VersionAdded: '0.49'
-  EnforcedStyle: symmetrical
-  SupportedStyles:
-    # symmetrical: closing brace is positioned in same way as opening brace
-    # new_line: closing brace is always on a new line
-    # same_line: closing brace is always on the same line as last argument
-    - symmetrical
-    - new_line
-    - same_line
+#Layout/MultilineBlockLayout:
+#  Description: 'Ensures newlines after multiline block do statements.'
+#  Enabled: true
+#  VersionAdded: '0.49'
+#
+#Layout/MultilineMethodCallBraceLayout:
+#  Description: >-
+#    Checks that the closing brace in a method call is
+#    either on the same line as the last method argument, or
+#    a new line.
+#  Enabled: true
+#  VersionAdded: '0.49'
+#  EnforcedStyle: symmetrical
+#  SupportedStyles:
+#    # symmetrical: closing brace is positioned in same way as opening brace
+#    # new_line: closing brace is always on a new line
+#    # same_line: closing brace is always on the same line as last argument
+#    - symmetrical
+#    - new_line
+#    - same_line
 
 Layout/MultilineMethodCallIndentation:
   Description: >-
@@ -237,41 +237,60 @@ Layout/MultilineMethodCallIndentation:
   # But it can be overridden by setting this parameter
   IndentationWidth: ~
 
-Layout/SpaceAfterComma:
-  Description: 'Use spaces after commas.'
-  StyleGuide: '#spaces-operators'
+#Layout/SpaceAfterComma:
+#  Description: 'Use spaces after commas.'
+#  StyleGuide: '#spaces-operators'
+#  Enabled: true
+#  VersionAdded: '0.49'
+#
+#Layout/SpaceAroundOperators:
+#  Description: 'Use a single space around operators.'
+#  StyleGuide: '#spaces-operators'
+#  Enabled: true
+#  VersionAdded: '0.49'
+#  # When `true`, allows most uses of extra spacing if the intent is to align
+#  # with an operator on the previous or next line, not counting empty lines
+#  # or comment lines.
+#  AllowForAlignment: true
+#  EnforcedStyleForExponentOperator: no_space
+#  SupportedStylesForExponentOperator:
+#    - space
+#    - no_space
+#
+#Layout/SpaceInsideArrayLiteralBrackets:
+#  Description: 'Checks the spacing inside array literal brackets.'
+#  Enabled: true
+#  VersionAdded: '0.52'
+#  EnforcedStyle: no_space
+#  SupportedStyles:
+#    - space
+#    - no_space
+#    # 'compact' normally requires a space inside the brackets, with the exception
+#    # that successive left brackets or right brackets are collapsed together
+#    - compact
+#  EnforcedStyleForEmptyBrackets: no_space
+#  SupportedStylesForEmptyBrackets:
+#    - space
+#    - no_space
+
+Layout/IndentationConsistency:
+  Description: 'Keep indentation straight.'
+  StyleGuide: '#spaces-indentation'
   Enabled: true
   VersionAdded: '0.49'
-
-Layout/SpaceAroundOperators:
-  Description: 'Use a single space around operators.'
-  StyleGuide: '#spaces-operators'
-  Enabled: true
-  VersionAdded: '0.49'
-  # When `true`, allows most uses of extra spacing if the intent is to align
-  # with an operator on the previous or next line, not counting empty lines
-  # or comment lines.
-  AllowForAlignment: true
-  EnforcedStyleForExponentOperator: no_space
-  SupportedStylesForExponentOperator:
-    - space
-    - no_space
-
-Layout/SpaceInsideArrayLiteralBrackets:
-  Description: 'Checks the spacing inside array literal brackets.'
-  Enabled: true
-  VersionAdded: '0.52'
-  EnforcedStyle: no_space
+  # The difference between `indented` and `normal` is that the `indented_internal_methods`
+  # style prescribes that in classes and modules the `protected` and `private`
+  # modifier keywords shall be indented the same as public methods and that
+  # protected and private members shall be indented one step more than the
+  # modifiers. Other than that, both styles mean that entities on the same
+  # logical depth shall have the same indentation.
+  EnforcedStyle: normal
   SupportedStyles:
-    - space
-    - no_space
-    # 'compact' normally requires a space inside the brackets, with the exception
-    # that successive left brackets or right brackets are collapsed together
-    - compact
-  EnforcedStyleForEmptyBrackets: no_space
-  SupportedStylesForEmptyBrackets:
-    - space
-    - no_space
+    - normal
+    - indented_internal_methods
+  Reference:
+    # A reference to `EnforcedStyle: indented_internal_methods`.
+    - https://edgeguides.rubyonrails.org/contributing_to_ruby_on_rails.html#follow-the-coding-conventions
 
 Layout/SpaceInsideBlockBraces:
   Description: >-
@@ -434,20 +453,20 @@ Layout/EndAlignment:
   AutoCorrect: false
   Severity: warning
 
-Layout/ExtraSpacing:
-  Description: 'Do not use unnecessary spacing.'
-  Enabled: true
-  VersionAdded: '0.49'
-  # When true, allows most uses of extra spacing if the intent is to align
-  # things with the previous or next line, not counting empty lines or comment
-  # lines.
-  AllowForAlignment: true
-  # When true, allows things like 'obj.meth(arg)  # comment',
-  # rather than insisting on 'obj.meth(arg) # comment'.
-  # If done for alignment, either this OR AllowForAlignment will allow it.
-  AllowBeforeTrailingComments: false
-  # When true, forces the alignment of `=` in assignments on consecutive lines.
-  ForceEqualSignAlignment: false
+#Layout/ExtraSpacing:
+#  Description: 'Do not use unnecessary spacing.'
+#  Enabled: true
+#  VersionAdded: '0.49'
+#  # When true, allows most uses of extra spacing if the intent is to align
+#  # things with the previous or next line, not counting empty lines or comment
+#  # lines.
+#  AllowForAlignment: true
+#  # When true, allows things like 'obj.meth(arg)  # comment',
+#  # rather than insisting on 'obj.meth(arg) # comment'.
+#  # If done for alignment, either this OR AllowForAlignment will allow it.
+#  AllowBeforeTrailingComments: false
+#  # When true, forces the alignment of `=` in assignments on consecutive lines.
+#  ForceEqualSignAlignment: false
 
 Layout/BlockAlignment:
   Description: 'Align block ends correctly.'
@@ -487,24 +506,24 @@ Layout/LineLength:
   # any regular expression listed in this option will be ignored by LineLength.
   IgnoredPatterns: []
 
-Layout/TrailingEmptyLines:
-  Description: 'Checks trailing blank lines and final newline.'
-  StyleGuide: '#newline-eof'
-  Enabled: true
-  VersionAdded: '0.49'
-  VersionChanged: '0.77'
-  EnforcedStyle: final_newline
-  SupportedStyles:
-    - final_newline
-    - final_blank_line
-
-Layout/TrailingWhitespace:
-  Description: 'Avoid trailing whitespace.'
-  StyleGuide: '#no-trailing-whitespace'
-  Enabled: true
-  VersionAdded: '0.49'
-  VersionChanged: '1.0'
-  AllowInHeredoc: false
+#Layout/TrailingEmptyLines:
+#  Description: 'Checks trailing blank lines and final newline.'
+#  StyleGuide: '#newline-eof'
+#  Enabled: true
+#  VersionAdded: '0.49'
+#  VersionChanged: '0.77'
+#  EnforcedStyle: final_newline
+#  SupportedStyles:
+#    - final_newline
+#    - final_blank_line
+#
+#Layout/TrailingWhitespace:
+#  Description: 'Avoid trailing whitespace.'
+#  StyleGuide: '#no-trailing-whitespace'
+#  Enabled: true
+#  VersionAdded: '0.49'
+#  VersionChanged: '1.0'
+#  AllowInHeredoc: false
 
 #################### Lint ##################################
 
@@ -516,46 +535,46 @@ Lint/AmbiguousBlockAssociation:
   Enabled: false
   VersionAdded: '0.48'
 
-Lint/ConstantDefinitionInBlock:
-  Description: 'Do not define constants within a block.'
-  StyleGuide: '#no-constant-definition-in-block'
-  Enabled: false
-  VersionAdded: '0.91'
-
-Lint/ParenthesesAsGroupedExpression:
-  Description: >-
-    Checks for method calls with a space before the opening
-    parenthesis.
-  StyleGuide: '#parens-no-spaces'
-  Enabled: true
-  VersionAdded: '0.12'
-  VersionChanged: '0.83'
-
-Lint/MissingSuper:
-  Description: >-
-    This cop checks for the presence of constructors and lifecycle callbacks
-    without calls to `super`'.
-  Enabled: false
-  VersionAdded: '0.89'
-
-Lint/UnusedBlockArgument:
-  Description: 'Checks for unused block arguments.'
-  StyleGuide: '#underscore-unused-vars'
-  Enabled: false
-  VersionAdded: '0.21'
-  VersionChanged: '0.22'
-  IgnoreEmptyBlocks: true
-  AllowUnusedKeywordArguments: false
-
-Lint/UnusedMethodArgument:
-  Description: 'Checks for unused method arguments.'
-  StyleGuide: '#underscore-unused-vars'
-  Enabled: false
-  VersionAdded: '0.21'
-  VersionChanged: '0.81'
-  AllowUnusedKeywordArguments: false
-  IgnoreEmptyMethods: true
-  IgnoreNotImplementedMethods: true
+#Lint/ConstantDefinitionInBlock:
+#  Description: 'Do not define constants within a block.'
+#  StyleGuide: '#no-constant-definition-in-block'
+#  Enabled: false
+#  VersionAdded: '0.91'
+#
+#Lint/ParenthesesAsGroupedExpression:
+#  Description: >-
+#    Checks for method calls with a space before the opening
+#    parenthesis.
+#  StyleGuide: '#parens-no-spaces'
+#  Enabled: true
+#  VersionAdded: '0.12'
+#  VersionChanged: '0.83'
+#
+#Lint/MissingSuper:
+#  Description: >-
+#    This cop checks for the presence of constructors and lifecycle callbacks
+#    without calls to `super`'.
+#  Enabled: false
+#  VersionAdded: '0.89'
+#
+#Lint/UnusedBlockArgument:
+#  Description: 'Checks for unused block arguments.'
+#  StyleGuide: '#underscore-unused-vars'
+#  Enabled: false
+#  VersionAdded: '0.21'
+#  VersionChanged: '0.22'
+#  IgnoreEmptyBlocks: true
+#  AllowUnusedKeywordArguments: false
+#
+#Lint/UnusedMethodArgument:
+#  Description: 'Checks for unused method arguments.'
+#  StyleGuide: '#underscore-unused-vars'
+#  Enabled: false
+#  VersionAdded: '0.21'
+#  VersionChanged: '0.81'
+#  AllowUnusedKeywordArguments: false
+#  IgnoreEmptyMethods: true
+#  IgnoreNotImplementedMethods: true
 
 #################### Metrics ###############################
 
@@ -566,7 +585,7 @@ Metrics/AbcSize:
   Reference:
     - http://c2.com/cgi/wiki?AbcMetric
     - https://en.wikipedia.org/wiki/ABC_Software_Metric
-  Enabled: false
+  Enabled: true
   VersionAdded: '0.27'
   VersionChanged: '0.66'
   # The ABC size is a calculated magnitude, so this number can be an Integer or
@@ -632,36 +651,36 @@ Naming/ConstantName:
   Enabled: false
   VersionAdded: '0.50'
 
-Naming/MethodParameterName:
-  Description: >-
-    Checks for method parameter names that contain capital letters,
-    end in numbers, or do not meet a minimal length.
-  Enabled: false
-  VersionAdded: '0.53'
-  VersionChanged: '0.77'
-  # Parameter names may be equal to or greater than this value
-  MinNameLength: 3
-  AllowNamesEndingInNumbers: true
-  # Allowed names that will not register an offense
-  AllowedNames:
-    - at
-    - by
-    - db
-    - id
-    - in
-    - io
-    - ip
-    - of
-    - 'on'
-    - os
-    - pp
-    - to
-  # Forbidden names that will register an offense
-  ForbiddenNames: []
+#Naming/MethodParameterName:
+#  Description: >-
+#    Checks for method parameter names that contain capital letters,
+#    end in numbers, or do not meet a minimal length.
+#  Enabled: false
+#  VersionAdded: '0.53'
+#  VersionChanged: '0.77'
+#  # Parameter names may be equal to or greater than this value
+#  MinNameLength: 3
+#  AllowNamesEndingInNumbers: true
+#  # Allowed names that will not register an offense
+#  AllowedNames:
+#    - at
+#    - by
+#    - db
+#    - id
+#    - in
+#    - io
+#    - ip
+#    - of
+#    - 'on'
+#    - os
+#    - pp
+#    - to
+#  # Forbidden names that will register an offense
+#  ForbiddenNames: []
 
 Naming/VariableNumber:
   Description: 'Use the configured style when numbering variables.'
-  Enabled: false
+  Enabled: true
   VersionAdded: '0.50'
   EnforcedStyle: snake_case
   SupportedStyles:
@@ -719,16 +738,16 @@ Security/YAMLLoad:
 
 #################### Style ###############################
 
-Style/AccessorGrouping:
-  Description: 'Checks for grouping of accessors in `class` and `module` bodies.'
-  Enabled: false
-  VersionAdded: '0.87'
-  EnforcedStyle: grouped
-  SupportedStyles:
-    # separated: each accessor goes in a separate statement.
-    # grouped: accessors are grouped into a single statement.
-    - separated
-    - grouped
+#Style/AccessorGrouping:
+#  Description: 'Checks for grouping of accessors in `class` and `module` bodies.'
+#  Enabled: false
+#  VersionAdded: '0.87'
+#  EnforcedStyle: grouped
+#  SupportedStyles:
+#    # separated: each accessor goes in a separate statement.
+#    # grouped: accessors are grouped into a single statement.
+#    - separated
+#    - grouped
 
 Style/Alias:
   Description: 'Use alias instead of alias_method.'
@@ -772,20 +791,20 @@ Style/ClassAndModuleChildren:
     - nested
     - compact
 
-Style/CommentAnnotation:
-  Description: >-
-    Checks formatting of special comments
-    (TODO, FIXME, OPTIMIZE, HACK, REVIEW).
-  StyleGuide: '#annotate-keywords'
-  Enabled: true
-  VersionAdded: '0.10'
-  VersionChanged: '0.31'
-  Keywords:
-    - TODO
-    - FIXME
-    - OPTIMIZE
-    - HACK
-    - REVIEW
+#Style/CommentAnnotation:
+#  Description: >-
+#    Checks formatting of special comments
+#    (TODO, FIXME, OPTIMIZE, HACK, REVIEW).
+#  StyleGuide: '#annotate-keywords'
+#  Enabled: true
+#  VersionAdded: '0.10'
+#  VersionChanged: '0.31'
+#  Keywords:
+#    - TODO
+#    - FIXME
+#    - OPTIMIZE
+#    - HACK
+#    - REVIEW
 
 Style/Documentation:
   Description: 'Document classes and non-namespace modules.'
@@ -795,11 +814,11 @@ Style/Documentation:
     - 'spec/**/*'
     - 'test/**/*'
 
-Style/EachWithObject:
-  Description: 'Prefer `each_with_object` over `inject` or `reduce`.'
-  Enabled: false
-  VersionAdded: '0.22'
-  VersionChanged: '0.42'
+#Style/EachWithObject:
+#  Description: 'Prefer `each_with_object` over `inject` or `reduce`.'
+#  Enabled: false
+#  VersionAdded: '0.22'
+#  VersionChanged: '0.42'
 
 Style/FrozenStringLiteralComment:
   Description: >-
@@ -854,12 +873,12 @@ Style/HashSyntax:
   # Do not suggest { a?: 1 } over { :a? => 1 } in ruby19 style
   PreferHashRocketsForNonAlnumEndingSymbols: true
 
-Style/HashTransformValues:
-  Description: 'Prefer `transform_values` over `each_with_object`, `map`, or `to_h`.'
-  Enabled: false
-  VersionAdded: '0.80'
-  VersionChanged: '0.90'
-  Safe: false
+#Style/HashTransformValues:
+#  Description: 'Prefer `transform_values` over `each_with_object`, `map`, or `to_h`.'
+#  Enabled: false
+#  VersionAdded: '0.80'
+#  VersionChanged: '0.90'
+#  Safe: false
 
 Style/Lambda:
   Description: 'Use the new lambda literal syntax for single-line blocks.'
@@ -873,21 +892,21 @@ Style/Lambda:
     - lambda
     - literal
 
-Style/MutableConstant:
-  Description: 'Do not assign mutable objects to constants.'
-  Enabled: false
-  VersionAdded: '0.34'
-  VersionChanged: '0.65'
-  EnforcedStyle: literals
-  SupportedStyles:
-    # literals: freeze literals assigned to constants
-    # strict: freeze all constants
-    # Strict mode is considered an experimental feature. It has not been updated
-    # with an exhaustive list of all methods that will produce frozen objects so
-    # there is a decent chance of getting some false positives. Luckily, there is
-    # no harm in freezing an already frozen object.
-    - literals
-    - strict
+#Style/MutableConstant:
+#  Description: 'Do not assign mutable objects to constants.'
+#  Enabled: false
+#  VersionAdded: '0.34'
+#  VersionChanged: '0.65'
+#  EnforcedStyle: literals
+#  SupportedStyles:
+#    # literals: freeze literals assigned to constants
+#    # strict: freeze all constants
+#    # Strict mode is considered an experimental feature. It has not been updated
+#    # with an exhaustive list of all methods that will produce frozen objects so
+#    # there is a decent chance of getting some false positives. Luckily, there is
+#    # no harm in freezing an already frozen object.
+#    - literals
+#    - strict
 
 Style/NumericLiterals:
   Description: >-
@@ -900,15 +919,15 @@ Style/NumericLiterals:
   MinDigits: 5
   Strict: false
 
-Style/NumericLiteralPrefix:
-  Description: 'Use smallcase prefixes for numeric literals.'
-  StyleGuide: '#numeric-literal-prefixes'
-  Enabled: true
-  VersionAdded: '0.41'
-  EnforcedOctalStyle: zero_with_o
-  SupportedOctalStyles:
-    - zero_with_o
-    - zero_only
+#Style/NumericLiteralPrefix:
+#  Description: 'Use smallcase prefixes for numeric literals.'
+#  StyleGuide: '#numeric-literal-prefixes'
+#  Enabled: true
+#  VersionAdded: '0.41'
+#  EnforcedOctalStyle: zero_with_o
+#  SupportedOctalStyles:
+#    - zero_with_o
+#    - zero_only
 
 Style/ParenthesesAroundCondition:
   Enabled: false
@@ -949,28 +968,28 @@ Style/RescueStandardError:
     - implicit
     - explicit
 
-Style/Semicolon:
-  Description: "Don't use semicolons to terminate expressions."
-  StyleGuide: '#no-semicolon'
-  Enabled: false
-  VersionAdded: '0.9'
-  VersionChanged: '0.19'
-  # Allow `;` to separate several expressions on the same line.
-  AllowAsExpressionSeparator: false
-
-Style/StringLiterals:
-  Description: 'Checks if uses of quotes match the configured preference.'
-  StyleGuide: '#consistent-string-literals'
-  Enabled: true
-  VersionAdded: '0.9'
-  VersionChanged: '0.36'
-  EnforcedStyle: single_quotes
-  SupportedStyles:
-    - single_quotes
-    - double_quotes
-  # If `true`, strings which span multiple lines using `\` for continuation must
-  # use the same type of quotes on each line.
-  ConsistentQuotesInMultiline: false
+#Style/Semicolon:
+#  Description: "Don't use semicolons to terminate expressions."
+#  StyleGuide: '#no-semicolon'
+#  Enabled: false
+#  VersionAdded: '0.9'
+#  VersionChanged: '0.19'
+#  # Allow `;` to separate several expressions on the same line.
+#  AllowAsExpressionSeparator: false
+#
+#Style/StringLiterals:
+#  Description: 'Checks if uses of quotes match the configured preference.'
+#  StyleGuide: '#consistent-string-literals'
+#  Enabled: true
+#  VersionAdded: '0.9'
+#  VersionChanged: '0.36'
+#  EnforcedStyle: single_quotes
+#  SupportedStyles:
+#    - single_quotes
+#    - double_quotes
+#  # If `true`, strings which span multiple lines using `\` for continuation must
+#  # use the same type of quotes on each line.
+#  ConsistentQuotesInMultiline: false
 
 Style/SymbolArray:
   Description: 'Use %i or %I for arrays of symbols.'
