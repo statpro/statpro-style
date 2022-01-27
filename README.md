@@ -12,21 +12,20 @@ group :test, :development do
 end
 ```
 
-Or, for a Ruby library, add this to your gemspec:
-
-```ruby
-spec.add_development_dependency 'statpro-style'
-```
-
-And then run:
-
-```bash
-$ bundle install
-```
-
 ## Usage
 To allow local development linting with rubocop, create a `.rubocop.yml` or `.codeclimate-rubocop.yml` with the following directives:
+```yaml
+inherit_from:
+- http://www.example.com/rubocop.yml
+- http://raw.githubusercontent.com/statpro/statpro-style/master/default_rubocop.yml
+- ../.rubocop.yml
 
+#The remote config file is cached locally and is only updated if:
+#  - The file does not exist.
+#  - The file has not been updated in the last 24 hours.
+#  - The remote copy has a newer modification time than the local copy.
+```
+OR
 ```yaml
 inherit_gem:
   statpro-style:
